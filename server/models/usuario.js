@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const uniqueValidator = require('mongoose-unique-validator');
-//const { delete } = require('../routes/usuario');
+
 
 let rolesValidos = {
     values: ['ADMIN_ROLE', "USER_ROLE"],
