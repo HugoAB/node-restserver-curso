@@ -1,12 +1,16 @@
 const mongoose = require('mongoose');
+const uniqueValidator = require('mongoose-unique-validator');
 
-let Schema = mongoose.Schema;
+const Schema = mongoose.Schema;
 
 let categoriaSchema = new Schema({
-    nombre: {
+    descripcion: {
         type: String,
-        unique: true,
+        unique: [true, 'La categoria ya existe'],
         required: true
+    },
+    usuario: {
+        type: Schema.Types.ObjectId, ref: 'Usuario'
     }
 });
 
